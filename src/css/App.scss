@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f6f6f6;
+    font-family: Montserrat;
+}
+.card {
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+    background: #8758ff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    .country {
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+        color: #fff;
+        z-index: 9999;
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+    .footer_image>img {
+        scale: 4;
+        position: absolute;
+        bottom: -30em;
+        z-index: 1;
+    }
+    .temp {
+        text-align: center;
+        position: relative;
+         bottom: -5rem;
+         z-index: 5;
+         color: #fff;
+    }
+}
