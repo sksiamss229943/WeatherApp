@@ -1,21 +1,21 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import { TbMapPin } from "react-icons/tb";
 import "../src/css/App.scss";
 import blob from "./images/blobanimation.svg";
 
 function App() {
-  const [input, setInput] = useState('Bangladesh');
-  const [data, setData] = useState('');
-  useEffect(()=>{
+  const [input, setInput] = useState("Bangladesh");
+  const [data, setData] = useState("");
+  useEffect(() => {
     const getData = async () => {
       let res = await axios.get(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=GK5PKAP745HMQ8YVZXWDWB62L`
       );
       setData(res.data.days[0]);
-    }
+    };
     getData();
-  },[input]);
+  }, [input]);
   return (
     <>
       <div className="card p-4">
@@ -40,6 +40,9 @@ function App() {
                 Min {(((data.tempmin - 32) * 5) / 9).toFixed(2)} | Max{" "}
                 {(((data.tempmax - 32) * 5) / 9).toFixed(2)}
               </h6>
+              <div className="time">
+                <h6>{data.datetime}</h6>
+              </div>
             </div>
             <div className="footer_image">
               <img src={blob} />
